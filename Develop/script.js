@@ -1,15 +1,16 @@
 function generatePassword() {
-  var passwordLength = getLength()
+  var passwordLength = getLength();
   if(passwordLength === undefined){
-    return "Password couldn't be created"
+    return "Password couldn't be created";
   }
-  var possibleChar = getChars()
+  var possibleChar = getChars();
 
-  var password = ""
-    //iterate as many times as passwordLength requires
-    //get a random letter from  possibleCHar array
-    // add to a string at each step
-    return password
+  var password = "";
+  for (var i = 0; i < passwordLength; i++){
+    password += possibleChar[Math.floor(Math.random() * possibleChar.length)];
+  }
+
+    return password;
   }
   function getChars(){
   var numericChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -20,39 +21,35 @@ function generatePassword() {
 
   //ask all of the things
   if(confirm("Do you want to add numbers?") === true){
-    passwordBase = passwordBase.concat(numericChar)
-    console.log(passwordBase)
+    passwordBase = passwordBase.concat(numericChar);
   } 
   if(confirm("Do you want to add lowercase characters?") === true){
-    passwordBase = passwordBase.concat(numericChar)
-    console.log(passwordBase)
+    passwordBase = passwordBase.concat(lowercaseChar);
   }
   if(confirm("Do you want to add uppercase characters?") === true){
-    passwordBase = passwordBase.concat(numericChar)
-    console.log(passwordBase)
+    passwordBase = passwordBase.concat(uppercaseChar);
   }
   if(confirm("Do you want to add special characters?") === true){
-    passwordBase = passwordBase.concat(numericChar)
-    console.log(passwordBase)
+    passwordBase = passwordBase.concat(specialChar);
   }
 
   if( passwordBase.length > 0){
-    return passwordBase
+    return passwordBase;
   }
-  alert("You must select a valid datatype")
-  if(confirm("Do you want to try again") === true){
-    return getChars()
+  alert("You must select a valid datatype");
+  if(confirm("Do you want to try again?") === true){
+    return getChars();
   }
 }
 
 function getLength(){
-  numberOfChar = prompt("How long do you want you password to be? (Between 8-128 characters)")
+  var numberOfChar = prompt("How long do you want you password to be? (Between 8-128 characters)");
     if (numberOfChar >= 8 && numberOfChar <=128){
-      return numberOfChar
+      return numberOfChar;
     } 
-    alert("You must enter a valid value as an integer between 8 and 128")
-    if(confirm("Do you want to try again") === true){
-      return getLength()
+    alert("You must enter a valid number between 8 and 128");
+    if(confirm("Do you want to try again?") === true){
+      return getLength();
     }
 }
 //    undefined         "eight"
@@ -64,9 +61,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  console.log(password)
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
 }
