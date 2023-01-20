@@ -9,9 +9,9 @@ function generatePassword() {
   for (var i = 0; i < passwordLength; i++){
     password += possibleChar[Math.floor(Math.random() * possibleChar.length)];
   }
-
-    return password;
+  return password;
   }
+
   function getChars(){
   var numericChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   var uppercaseChar = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -19,7 +19,6 @@ function generatePassword() {
   var specialChar = ['@', '%', '+', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
   var passwordBase = []
 
-  //ask all of the things
   if(confirm("Do you want to add numbers?") === true){
     passwordBase = passwordBase.concat(numericChar);
   } 
@@ -52,6 +51,7 @@ function getLength(){
       return getLength();
     }
 }
+
 var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
