@@ -45,14 +45,14 @@ Link to my live project site: https://porteous89.github.io/alisters-password-gen
 
 ## Usage
 
-#### Video of Password Generator Working
+#### Link to video of Password Generator Working
 https://drive.google.com/file/d/17yzz0GsYUVmGNfVCWi83Mvm1_6HQM2VA/view
 
 #### Working section by section
-<img src="Develop\assets\Working-section-by-section.png" width= 35% >
+<img src="Develop\assets\Working-section-by-section.png" width= 45% >
 
 #### Console displaying no errors while running Password Generator
-<img src="Develop\assets\console-noErrors.png" width= 35% >
+<img src="Develop\assets\console-noErrors.png" width= 45% >
 
 
 
